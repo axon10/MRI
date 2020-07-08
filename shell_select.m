@@ -1,6 +1,7 @@
+% select shells and subject to modify
 sub = 3
 shell = 2000
-
+% run from subjects directory
 dwifile = sprintf('sub%d/data_ud.nii.gz',sub)
 bvals = sprintf('sub%d/bvals', sub)
 bvecs = sprintf('sub%d/bvecs', sub)
@@ -10,7 +11,7 @@ DWI_vol = DWI.vol;
 bval = str2num(fileread(bvals));
 bvec = str2num(fileread(bvecs));
 sprintf('Originally had %d shells', length(bval))
-b= find(bval< shell - 100 | bval > shell + 100);
+b= find((bval< shell - 100 | bval > shell + 100) & bval >= 100) ;
 DWI_vol(:,:,:,b) = [];
 bval(b) = []
 % transpose bvals
