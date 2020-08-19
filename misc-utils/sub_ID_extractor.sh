@@ -1,5 +1,6 @@
 #!/bin/bash
 declare -A filenames
+
 for filename in /rri_disks/fides/chen_lab/HCPA/imagingcollection01/HCA*/; do
     # take the substring
     start=4

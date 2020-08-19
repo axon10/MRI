@@ -1,3 +1,9 @@
+'''
+   Run this script to try and import any missing AP images.
+
+
+'''
+
 import os
 header = "/rri_disks/fides/chen_lab/HCPA/imagingcollection01/"
 post = "/unprocessed/Diffusion/"
